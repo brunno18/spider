@@ -2,29 +2,35 @@
 
 error_reporting(E_ALL);
 
-define('APP_PATH', realpath('..'));
+define('BASE_PATH', dirname(__DIR__));
+define('APP_PATH', BASE_PATH . '/app');
 
 try {
 
     /**
      * Read the configuration
      */
-    $config = include APP_PATH . "/app/config/config.php";
+    include APP_PATH . "/config/config.php";
 
     /**
      * Read auto-loader
      */
-    include APP_PATH . "/app/config/loader.php";
+    include APP_PATH . "/config/loader.php";
 
     /**
      * Read services
      */
-    include APP_PATH . "/app/config/services.php";
-
+    include APP_PATH . "/config/services.php";
+    
     /**
-     * Handle the request
+     * Read Modules
      */
+    include APP_PATH . "/config/modules.php";
+    
+    
     $application = new \Phalcon\Mvc\Application($di);
+    
+    $application->registerModules($modules);
 
     echo $application->handle()->getContent();
 
