@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 spider/public
+web: vendor/bin/heroku-php-apache2 spider/app/modules/store
