@@ -17,6 +17,8 @@ try {
      */
     include APP_PATH . "/config/loader.php";
 
+	require('vendor/autoload.php');
+
     /**
      * Read services
      */
