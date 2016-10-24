@@ -6,4 +6,9 @@ class IndexController extends ControllerBase
     {
         
     }
+    
+    public function testeAction()
+    {
+        echo "Teste Heroku"; 
+    }
 }
