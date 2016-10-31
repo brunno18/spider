@@ -9,7 +9,7 @@ use Phalcon\Loader;
 use Phalcon\Test\UnitTestCase as PhalconTestCase;
 
 
-abstract class TestCase extends PhalconTestCase
+abstract class UnitTestCase extends PhalconTestCase
 {
     /**
      * @var \Voice\Cache

@@ -5,7 +5,7 @@ namespace Spider\Tests;
 /**
  * Class UnitTest
  */
-class UnitTest extends TestCase {
+class UnitTest extends UnitTestCase {
 
     public function testTestCase() {
 
