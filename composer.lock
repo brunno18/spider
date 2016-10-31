@@ -1,0 +1,126 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "61c580a838a0be59cb4ddf4d96f464a6",
+    "content-hash": "64ef9cab38897b66fc4b0ff91d8b3271",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "phalcon/zephir",
+            "version": "0.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phalcon/zephir.git",
+                "reference": "b45622ba768eb5ff14835a59d3d0ee4ec5f7f820"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phalcon/zephir/zipball/b45622ba768eb5ff14835a59d3d0ee4ec5f7f820",
+                "reference": "b45622ba768eb5ff14835a59d3d0ee4ec5f7f820",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ctype": "*",
+                "ext-hash": "*",
+                "ext-json": "*",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "ext-gmp": "*",
+                "ext-pdo": "*",
+                "ext-pdo_sqlite": "*",
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "~2.6"
+            },
+            "bin": [
+                "bin/zephir"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Zephir\\": "Library"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Zephir Team",
+                    "homepage": "http://zephir-lang.com/"
+                },
+                {
+                    "name": "Contributors",
+                    "homepage": "https://github.com/phalcon/zephir/graphs/contributors"
+                }
+            ],
+            "description": "Zephir is a compiled high level language aimed to the creation of C-extensions for PHP",
+            "homepage": "http://zephir-lang.com/",
+            "keywords": [
+                "extension"
+            ],
+            "time": "2016-08-08 03:10:47"
+        },
+        {
+            "name": "techpivot/phalcon-ci-installer",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/techpivot/phalcon-ci-installer.git",
+                "reference": "a82c0f9bbfd11572885c798aec24af8a71febaf5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/techpivot/phalcon-ci-installer/zipball/a82c0f9bbfd11572885c798aec24af8a71febaf5",
+                "reference": "a82c0f9bbfd11572885c798aec24af8a71febaf5",
+                "shasum": ""
+            },
+            "require": {
+                "phalcon/zephir": "~0.9",
+                "php": "^5.4|^5.5|^5.6|^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7"
+            },
+            "bin": [
+                "bin/install-phalcon.sh"
+            ],
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Composer integration for PHP applications to install the Phalcon framework as an extension in the PHP runtime for various hosted CI services including TravisCI, CircleCI, Scrutinizer, Shippable and Codeship.",
+            "keywords": [
+                "CircleCI",
+                "Codeship",
+                "ScrutinizerCI",
+                "TechPivot",
+                "continuous integration",
+                "phalcon",
+                "php",
+                "shippable",
+                "travisci"
+            ],
+            "time": "2016-07-24 20:55:08"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "5.6.*"
+    },
+    "platform-dev": []
+}
