@@ -1,6 +1,6 @@
 <?php
 
-namespace PsPedidos\Models;
+namespace Spider\Models;
 
 class Permission extends \Phalcon\Mvc\Model
 {
