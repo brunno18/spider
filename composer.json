@@ -6,6 +6,14 @@
 	"require-dev": {
 		"heroku/heroku-buildpack-php": "*",
         "phpunit/phpunit": "^4.8",
-        "phalcon/incubator": "2.0.*"
+        "phalcon/incubator": "^2.0"
+	},
+	"scripts": {
+		"compile": [
+			"mkdir app/modules/dashboard/cache",
+            "mkdir app/modules/store/cache",
+			"chmod -R 777 app/modules/dashboard/cache",
+            "chmod -R 777 app/modules/store/cache"
+		]
 	}
 }
