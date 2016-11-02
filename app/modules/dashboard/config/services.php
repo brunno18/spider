@@ -2,6 +2,9 @@
 
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
+use Phalcon\Mvc\Dispatcher;
+
+use Spider\Modules\Dashboard\Libraries\Acl\Acl;
 
 
 $di->set('moduleConfig', function () use ($moduleConfig) {
@@ -36,4 +39,21 @@ $di->set('view', function () use ($moduleConfig) {
     ));
     
     return $view;
+});
+
+// Registering a dispatcher
+$di->set('dispatcher', function () {
+    $dispatcher = new Dispatcher();
+
+    //Dispatcher use a default namespace
+    $dispatcher->setDefaultNamespace('Spider\Modules\Dashboard\Controllers');
+
+    return $dispatcher;
+});
+
+/**
+ * Access Control List
+ */
+$di->set('acl', function () {
+    return new Acl();
 });
