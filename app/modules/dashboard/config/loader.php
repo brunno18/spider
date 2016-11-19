@@ -7,7 +7,8 @@ $loader = new \Phalcon\Loader();
  */
 $loader->registerNamespaces([
     'Spider\Modules\Dashboard\Controllers'   => $moduleConfig->application->controllersDir,
-    'Spider\Modules\Dashboard\Libraries'     => $moduleConfig->application->libraryDir
+    'Spider\Modules\Dashboard\Libraries'     => $moduleConfig->application->libraryDir,
+    'Spider\Modules\Dashboard\Forms'         => $moduleConfig->application->formsDir,
 ]);
 
 $loader->register();

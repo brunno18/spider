@@ -3,8 +3,11 @@
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Dispatcher;
+use Phalcon\Flash\Direct as FlashDirect;
+use Phalcon\Flash\Session as FlashSession;
 
 use Spider\Modules\Dashboard\Libraries\Acl\Acl;
+use Spider\Modules\Dashboard\Libraries\Auth\Auth;
 
 
 $di->set('moduleConfig', function () use ($moduleConfig) {
@@ -57,3 +60,49 @@ $di->set('dispatcher', function () {
 $di->set('acl', function () {
     return new Acl();
 });
+
+/**
+ * Custom authentication component
+ */
+$di->set('auth', function () {
+    return new Auth();
+});
+
+/**
+ * Register the flash service with custom CSS classes
+ */
+$di->set(
+    "flash",
+    function () {
+        $flash = new FlashDirect(
+            [
+                "error"   => "alert alert-danger",
+                "success" => "alert alert-success",
+                "notice"  => "alert alert-info",
+                "warning" => "alert alert-warning",
+            ]
+        );
+        
+        return $flash;
+    }
+);
+
+
+/**
+ * Register the flash service with custom CSS classes
+ */
+$di->set(
+    "flashSession",
+    function () {
+        $flashSession = new FlashSession(
+            [
+                "error"   => "alert alert-danger",
+                "success" => "alert alert-success",
+                "notice"  => "alert alert-info",
+                "warning" => "alert alert-warning",
+            ]
+        );  
+        
+        return $flashSession;
+    }
+);
