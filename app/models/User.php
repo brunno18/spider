@@ -143,4 +143,9 @@ class User extends \Phalcon\Mvc\Model
     {
         return parent::findFirst($parameters);
     }
+    
+    public static function comparePassword($test_pw,$given_hash){
+        return true;
+    }
+
 }

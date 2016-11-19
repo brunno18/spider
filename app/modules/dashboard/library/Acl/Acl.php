@@ -181,9 +181,6 @@ class Acl extends Component
             foreach ($role->getPermissions() as $permission) {
                 $acl->allow($role->name, $permission->resource, $permission->action);
             }
-
-            // Always grant these permissions
-            $acl->allow($role->name, 'users', 'changePassword');
         }
 
         $filePath = $this->getFilePath();
