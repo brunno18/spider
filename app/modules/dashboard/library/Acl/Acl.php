@@ -32,9 +32,7 @@ class Acl extends Component
      * @var array
      */
     private $privateResources = [
-        'index' => [
-            'index' => 'index'
-        ],
+       
     ];
 
     /**

@@ -6,6 +6,6 @@ class IndexController extends ControllerBase
 {
     public function indexAction()
     {
-        echo "Tela Inicial da Dashboard";
+        $this->response->redirect('dashboard/session/login');
     }
 }
