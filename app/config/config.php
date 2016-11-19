@@ -8,12 +8,13 @@ $config = new Config(array(
         'host'        => 'localhost',
         'username'    => 'root',
         'password'    => '',
-        'dbname'      => 'test',
+        'dbname'      => 'spider',
         'charset'     => 'utf8',
     ),
     'application' => array(
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
         'baseUri'        => '/spider/',
+        'publicUrl'      => 'spider'
     )
 ));

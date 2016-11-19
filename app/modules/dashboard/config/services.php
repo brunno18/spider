@@ -5,6 +5,7 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Dispatcher;
 
 use Spider\Modules\Dashboard\Libraries\Acl\Acl;
+use Spider\Modules\Dashboard\Libraries\Auth\Auth;
 
 
 $di->set('moduleConfig', function () use ($moduleConfig) {
@@ -56,4 +57,11 @@ $di->set('dispatcher', function () {
  */
 $di->set('acl', function () {
     return new Acl();
+});
+
+/**
+ * Custom authentication component
+ */
+$di->set('auth', function () {
+    return new Auth();
 });
