@@ -2,7 +2,7 @@
 
 namespace Spider\Modules\Dashboard\Controllers;
 
-class IndexController extends ControllerBase
+class OrderController extends ControllerBase
 {
     public function indexAction()
     {

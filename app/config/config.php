@@ -15,6 +15,6 @@ $config = new Config(array(
         'modelsDir'      => APP_PATH . '/models/',
         'migrationsDir'  => APP_PATH . '/migrations/',
         'baseUri'        => '/spider/',
-        'publicUrl'      => 'spider'
+        'publicUrl'      => 'http://localhost/spider'
     )
 ));
