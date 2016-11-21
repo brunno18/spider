@@ -8,14 +8,17 @@
 	<meta name="author" content="">
 	<title>Login</title>
 	
-	<!-- css aqui! -->
-	<link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Bootstrap Core CSS -->
+	{{ stylesheet_link('plugins/bootstrap/css/bootstrap.min.css') }}
+    
 	<!-- MetisMenu CSS -->
-	<link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    {{ stylesheet_link('plugins/metisMenu/metisMenu.min.css') }}
+    
 	<!-- Custom CSS -->
-	<link href="../dist/css/sb-admin-2.css" rel="stylesheet">
+    {{ stylesheet_link('css/sb-admin-2.min.css') }}
+    
 	<!-- Custom Fonts -->
-	<link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    {{ stylesheet_link('plugins/font-awesome/css/font-awesome.min.css') }}
 
 </head>
 
@@ -53,13 +56,16 @@
 	</div>
 
 	<!-- jQuery -->
-	<script src="../vendor/jquery/jquery.min.js"></script>
+    {{ javascript_include('plugins/jquery/jquery.min.js') }}
+    
 	<!-- Bootstrap Core JavaScript -->
-	<script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!-- Metis Menu Plugin JavaScript -->
-	<script src="../vendor/metisMenu/metisMenu.min.js"></script>
+    {{ javascript_include('plugins/bootstrap/js/bootstrap.min.js') }}
+    
+	<!-- Metis Menu plugins JavaScript -->
+    {{ javascript_include('plugins/metisMenu/metisMenu.min.js') }}
+    
 	<!-- Custom Theme JavaScript -->
-	<script src="../dist/js/sb-admin-2.js"></script>
+    {{ javascript_include('js/sb-admin-2.min.js') }}
 
 
 </body>
