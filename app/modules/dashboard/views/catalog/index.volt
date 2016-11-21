@@ -17,22 +17,23 @@
                         Categorias
                     </div>
                     <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <button class="break-text btn btn-sq btn-default" id="newCategory">
+                    <div class="panel-body" id="categories">
+                        <button class="break-text btn btn-sq btn-default esse" id="newCategory" data-toggle="modal" data-target="#createCategoryModal">
                             <i class="middle-text fa fa-plus fa-4x"></i><br/>
                         </button>
                         
-                        <button href="#" class="break-text btn btn-sq btn-default">
+                        <button class="break-text btn btn-sq btn-default esse" data-id="9" data-name="Saladas   ">
                             <h5 class="middle-text"><strong>Saladas de Frutas Vermelhas</strong></h5>
                         </button>
                         
-                        <button href="#" class="break-text btn btn-sq btn-default">
+                        <button class="break-text btn btn-sq btn-default esse" data-id="9" data-name="Massas">
                             <h5 class="middle-text"><strong>Massas</strong></h5>
                         </button>
                         
-                        <button href="#" class="break-text btn btn-sq btn-default">
+                        <button class="break-text btn btn-sq btn-default esse" data-id="9" data-name="Bebidas">
                             <h5 class="middle-text"><strong>Bebidas</strong></h5>
                         </button>
+                        
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -50,7 +51,7 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="items">
                             <thead>
                                 <tr>
                                     <th>id</th>
@@ -61,53 +62,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               <tr>
-                                    <td>1</td>
-                                    <td>Pizza Calabresa GG</td>
-                                    <td>R$ 35</td>
-                                    <td>50 unidades</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-circle">
-                                            <i class="fa fa-pencil"></i>
-                                        </button>
-                                        
-                                        <button type="button" class="btn btn-danger btn-circle">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>2</td>
-                                    <td>Pizza Calabresa M</td>
-                                    <td>R$ 25</td>
-                                    <td>30 unidades</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-circle">
-                                            <i class="fa fa-pencil"></i>
-                                        </button>
-                                        
-                                        <button type="button" class="btn btn-danger btn-circle">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>3</td>
-                                    <td>Pizza Calabresa G</td>
-                                    <td>R$ 29</td>
-                                    <td>35 unidades</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-circle">
-                                            <i class="fa fa-pencil"></i>
-                                        </button>
-                                        
-                                        <button type="button" class="btn btn-danger btn-circle">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                              
                             </tbody>
                         </table>
                         <!-- /.table-responsive -->
@@ -121,6 +76,51 @@
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="createCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Cadastro de Categoria</h4>
+                </div>
+                <div class="modal-body">
+                <form role="form" id="createCategoryForm">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="categoryName">Nome da Categoria</label>
+                                <input type="text" class="form-control" id="categoryName" name="name" placeholder="Informe o nome da categoria" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="categoryDescription">Descrição</label>
+                                <textarea class="form-control" rows="3" id="categoryDescription" name="description" placeholder="Fale um pouco sobre a categoria..."></textarea>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
+                        </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <div class="hidden" id="itemsOptionsTemplates">
+        <button class="btn btn-primary btn-circle edit-item" data-container="body" data-toggle="tooltip" data-html="true" data-placement="top" title="Editar">
+            <i class="fa fa-pencil"></i>
+        </button>
+
+        <button class="btn btn-danger btn-circle delete-item" data-container="body" data-toggle="tooltip" data-html="true" data-placement="top" title="Remover">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
 </div>
 
 {% include "layouts/dashboardScripts.volt" %}
