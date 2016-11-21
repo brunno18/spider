@@ -32,6 +32,9 @@
         <!-- DataTables Responsive CSS -->
         {{ stylesheet_link('plugins/datatables-responsive/dataTables.responsive.css') }}
         
+        <!-- Pnotify style -->
+        {{ stylesheet_link('plugins/pnotify/pnotify.custom.min.css') }}
+        
         <!-- Spider CSS -->
         {{ stylesheet_link('css/spider.css') }}
 

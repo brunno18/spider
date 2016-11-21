@@ -18,12 +18,6 @@ class Item extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    public $idEstablishment;
-
-    /**
-     *
-     * @var integer
-     */
     public $idCategory;
 
     /**

@@ -13,12 +13,6 @@ class Category extends \Phalcon\Mvc\Model
      * @var integer
      */
     public $idCategory;
-    
-    /**
-     *
-     * @var integer
-     */
-    public $idEstablishment;
 
     /**
      *
@@ -56,7 +50,7 @@ class Category extends \Phalcon\Mvc\Model
     {
         $this->validate(
             new Uniqueness(array(
-                'field' => ['name', 'idEstablishment'],
+                'field' => ['name'],
                 'message' => 'Já existe uma categoria com o nome - ' . $this->name
             ))
         );

@@ -17,22 +17,23 @@
                         Categorias
                     </div>
                     <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <button class="break-text btn btn-sq btn-default" id="newCategory">
+                    <div class="panel-body" id="categories">
+                        <button class="break-text btn btn-sq btn-default esse" id="newCategory" data-toggle="modal" data-target="#createCategoryModal">
                             <i class="middle-text fa fa-plus fa-4x"></i><br/>
                         </button>
                         
-                        <button href="#" class="break-text btn btn-sq btn-default">
+                        <button class="break-text btn btn-sq btn-default esse">
                             <h5 class="middle-text"><strong>Saladas de Frutas Vermelhas</strong></h5>
                         </button>
                         
-                        <button href="#" class="break-text btn btn-sq btn-default">
+                        <button class="break-text btn btn-sq btn-default esse">
                             <h5 class="middle-text"><strong>Massas</strong></h5>
                         </button>
                         
-                        <button href="#" class="break-text btn btn-sq btn-default">
+                        <button class="break-text btn btn-sq btn-default esse">
                             <h5 class="middle-text"><strong>Bebidas</strong></h5>
                         </button>
+                        
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -121,6 +122,42 @@
         <!-- /.row -->
     </div>
     <!-- /.container-fluid -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="createCategoryModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel">Cadastro de Categoria</h4>
+                </div>
+                <div class="modal-body">
+                <form role="form" id="createCategoryForm">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="categoryName">Nome da Categoria</label>
+                                <input type="text" class="form-control" id="categoryName" name="name" placeholder="Informe o nome da categoria" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="categoryDescription">Descrição</label>
+                                <textarea class="form-control" rows="3" id="categoryDescription" name="description" placeholder="Fale um pouco sobre a categoria..."></textarea>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        </div>
+                        </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 </div>
 
 {% include "layouts/dashboardScripts.volt" %}
