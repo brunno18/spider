@@ -22,15 +22,15 @@
                             <i class="middle-text fa fa-plus fa-4x"></i><br/>
                         </button>
                         
-                        <button class="break-text btn btn-sq btn-default esse">
+                        <button class="break-text btn btn-sq btn-default esse" data-id="9" data-name="Saladas   ">
                             <h5 class="middle-text"><strong>Saladas de Frutas Vermelhas</strong></h5>
                         </button>
                         
-                        <button class="break-text btn btn-sq btn-default esse">
+                        <button class="break-text btn btn-sq btn-default esse" data-id="9" data-name="Massas">
                             <h5 class="middle-text"><strong>Massas</strong></h5>
                         </button>
                         
-                        <button class="break-text btn btn-sq btn-default esse">
+                        <button class="break-text btn btn-sq btn-default esse" data-id="9" data-name="Bebidas">
                             <h5 class="middle-text"><strong>Bebidas</strong></h5>
                         </button>
                         
@@ -51,7 +51,7 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+                        <table width="100%" class="table table-striped table-bordered table-hover" id="items">
                             <thead>
                                 <tr>
                                     <th>id</th>
@@ -62,53 +62,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               <tr>
-                                    <td>1</td>
-                                    <td>Pizza Calabresa GG</td>
-                                    <td>R$ 35</td>
-                                    <td>50 unidades</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-circle">
-                                            <i class="fa fa-pencil"></i>
-                                        </button>
-                                        
-                                        <button type="button" class="btn btn-danger btn-circle">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>2</td>
-                                    <td>Pizza Calabresa M</td>
-                                    <td>R$ 25</td>
-                                    <td>30 unidades</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-circle">
-                                            <i class="fa fa-pencil"></i>
-                                        </button>
-                                        
-                                        <button type="button" class="btn btn-danger btn-circle">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td>3</td>
-                                    <td>Pizza Calabresa G</td>
-                                    <td>R$ 29</td>
-                                    <td>35 unidades</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary btn-circle">
-                                            <i class="fa fa-pencil"></i>
-                                        </button>
-                                        
-                                        <button type="button" class="btn btn-danger btn-circle">
-                                            <i class="fa fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>
+                              
                             </tbody>
                         </table>
                         <!-- /.table-responsive -->
@@ -158,6 +112,15 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+    <div class="hidden" id="itemsOptionsTemplates">
+        <button class="btn btn-primary btn-circle edit-item" data-container="body" data-toggle="tooltip" data-html="true" data-placement="top" title="Editar">
+            <i class="fa fa-pencil"></i>
+        </button>
+
+        <button class="btn btn-danger btn-circle delete-item" data-container="body" data-toggle="tooltip" data-html="true" data-placement="top" title="Remover">
+            <i class="fa fa-trash"></i>
+        </button>
+    </div>
 </div>
 
 {% include "layouts/dashboardScripts.volt" %}
