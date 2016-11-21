@@ -8,23 +8,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        
         <title>Spider - Dashboard</title>
-
+        
         <!-- Bootstrap Core CSS -->
         {{ stylesheet_link('plugins/bootstrap/css/bootstrap.min.css') }}
-
+        
         <!-- MetisMenu CSS -->
         {{ stylesheet_link('plugins/metisMenu/metisMenu.min.css') }}
         
         <!-- Custom CSS -->
         {{ stylesheet_link('css/sb-admin-2.min.css') }}
-
+        
         <!-- Morris Charts CSS -->
         {{ stylesheet_link('plugins/morrisjs/morris.css') }}
-
+        
         <!-- Custom Fonts -->
         {{ stylesheet_link('plugins/font-awesome/css/font-awesome.min.css') }}
+        
+         <!-- DataTables CSS -->
+        {{ stylesheet_link('plugins/datatables-plugins/dataTables.bootstrap.css') }}
+        
+        <!-- DataTables Responsive CSS -->
+        {{ stylesheet_link('plugins/datatables-responsive/dataTables.responsive.css') }}
+        
+        <!-- Spider CSS -->
+        {{ stylesheet_link('css/spider.css') }}
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -287,17 +296,8 @@
                                 <a href="{{publicUrl}}/dashboard/client/index"><i class="fa fa-users fa-fw"></i> Clientes</a>
                             </li>
                             
-                            <li class="">
-                                <a href="#"><i class="fa fa-bars fa-fw"></i> Catálogo<span class="fa arrow"></span></a>
-                                <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                                    <li>
-                                        <a href="{{publicUrl}}/dashboard/catalog/products">Produtos</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{publicUrl}}/dashboard/catalog/categories">Categorias</a>
-                                    </li>
-                                </ul>
-                                <!-- /.nav-second-level -->
+                            <li>
+                                <a href="{{publicUrl}}/dashboard/catalog"><i class="fa fa-bars fa-fw"></i> Catálogo</a>
                             </li>
                             
                         </ul>
