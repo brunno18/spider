@@ -30,9 +30,7 @@ class Category extends \Phalcon\Mvc\Model
      * Initialize method for model.
      */
     public function initialize()
-    {
-        $this->setSource("'Category'");
-        
+    {   
         $this->hasMany("idCategory",  __NAMESPACE__ . "\Item", "idCategory", [
             'alias' => 'items',
             "foreignKey" => [
@@ -72,7 +70,7 @@ class Category extends \Phalcon\Mvc\Model
      */
     public function getSource()
     {
-        return 'Category';
+        return 'category';
     }
 
     /**

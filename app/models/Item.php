@@ -49,8 +49,6 @@ class Item extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->setSource("'Item'");
-        
         $this->belongsTo("idCategory",  __NAMESPACE__ . "\Category", "idCategory", [
             'alias' => 'category'
         ]);
@@ -91,7 +89,7 @@ class Item extends \Phalcon\Mvc\Model
      */
     public function getSource()
     {
-        return 'Item';
+        return 'item';
     }
 
     /**

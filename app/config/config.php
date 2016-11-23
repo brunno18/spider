@@ -12,9 +12,12 @@ $config = new Config(array(
         'charset'     => 'utf8',
     ),
     'application' => array(
-        'modelsDir'      => APP_PATH . '/models/',
-        'migrationsDir'  => APP_PATH . '/migrations/',
+        'modelsDir'      => 'app/models/',
+        'migrationsDir'  => 'app/migrations/',
         'baseUri'        => '/spider/',
         'publicUrl'      => 'http://localhost/spider'
     )
 ));
+
+
+return $config;
