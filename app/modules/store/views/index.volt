@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+        {#<link href="css/cadastro.css" rel="stylesheet" type="text/css" media="all"/>#}
         <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="js/move-top.js"></script>
         <script type="text/javascript" src="js/easing.js"></script>
@@ -20,7 +21,7 @@
                     </div>
                     <div class="account_desc">
                         <ul>
-                            <li><a href="#">Registrar</a></li>
+                            <li><a href="{{ baseurl }}store/cadastro">Registrar</a></li>
                             <li><a href="#">Login</a></li>
                             <li><a href="#">Minha conta</a></li>
                         </ul>

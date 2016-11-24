@@ -1,12 +1,6 @@
 <?php
 
-namespace Spider\Models;
-
-use Phalcon\Mvc\Model\Validator\Email;
-use Phalcon\Mvc\Model\Validator\Uniqueness;
-use Phalcon\Mvc\Model\Validator\PresenceOf;
-use Phalcon\Mvc\Model\Validator\InclusionIn;
-use Phalcon\Mvc\Model\Validator\Numericality;
+use Phalcon\Mvc\Model\Validator\Email as Email;
 
 class User extends \Phalcon\Mvc\Model
 {
@@ -14,50 +8,67 @@ class User extends \Phalcon\Mvc\Model
     /**
      *
      * @var integer
+     * @Primary
+     * @Identity
+     * @Column(type="integer", length=11, nullable=false)
      */
     public $id;
 
     /**
      *
+     * @var integer
+     * @Column(type="integer", length=11, nullable=false)
+     */
+    public $idRole;
+
+    /**
+     *
      * @var string
+     * @Column(type="string", length=100, nullable=false)
      */
     public $name;
 
     /**
      *
      * @var string
+     * @Column(type="string", length=100, nullable=false)
      */
     public $username;
 
     /**
      *
      * @var string
+     * @Column(type="string", length=100, nullable=false)
      */
     public $password;
 
     /**
      *
      * @var string
+     * @Column(type="string", length=100, nullable=false)
      */
-    public $active;
+    public $email;
 
     /**
      *
-     * @var integer
+     * @var string
+     * @Column(type="string", length=25, nullable=false)
      */
-    public $idRole;
-    
-    
+    public $phone;
+
     /**
-     * Define relationships
+     *
+     * @var string
+     * @Column(type="string", length=25, nullable=false)
      */
-    public function initialize()
-    {
-        $this->belongsTo("idRole",  __NAMESPACE__ . "\Role", "id", [
-            'alias' => 'role',
-            'reusable' => true
-        ]);
-    }
+    public $cellphone;
+
+    /**
+     *
+     * @var string
+     * @Column(type="string", length=1, nullable=false)
+     */
+    public $active;
 
     /**
      * Validations and business logic
@@ -67,49 +78,19 @@ class User extends \Phalcon\Mvc\Model
     public function validation()
     {
         $this->validate(
-            new Uniqueness(array(
-                'field' => 'username',
-                'message' => 'Conflict occurred attempting to store user - Duplicate username Entry'
-            ))
+            new Email(
+                [
+                    'field'    => 'email',
+                    'required' => true,
+                ]
+            )
         );
-        
-        $this->validate(
-            new PresenceOf(array(
-                'field' => 'name',
-                'message' => 'name is required'
-            ))
-        );
-        
-        $this->validate(
-            new PresenceOf(array(
-                'field' => 'username',
-                'message' => 'username is required'
-            ))
-        );
-        
-        $this->validate(
-            new PresenceOf(array(
-                'field' => 'password',
-                'message' => 'password is required'
-            ))
-        );
-        
-        $this->validate(
-            new PresenceOf(array(
-                'field' => 'idRole',
-                'message' => 'role is required'
-            ))
-        );
-        
-        $this->validate( 
-            new InclusionIn(array(
-                'field' => 'active',
-                'message' => 'Active field must be 0 or 1',
-                'domain' => array(0, 1)
-            ))
-        );
-        
-        return !$this->validationHasFailed();
+
+        if ($this->validationHasFailed() == true) {
+            return false;
+        }
+
+        return true;
     }
 
     /**
@@ -142,10 +123,6 @@ class User extends \Phalcon\Mvc\Model
     public static function findFirst($parameters = null)
     {
         return parent::findFirst($parameters);
-    }
-    
-    public static function comparePassword($test_pw,$given_hash){
-        return true;
     }
 
 }
