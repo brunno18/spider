@@ -17,6 +17,10 @@
             $("table").on('click', '.edit-item', function(){
                 Spider.Catalog.showEditItemModal($(this).attr("data-id"));
             });
+            
+            $("table").on('click', '.delete-item', function(){
+                Spider.Catalog.showDeleteItemModal($(this).attr("data-id"), $(this).attr("data-name"));
+            });
         },
     
         showEditItemModal: function(id) {
@@ -40,6 +44,12 @@
                                 console.log(err);
                             }
             });
+        },
+        
+        showDeleteItemModal: function(id, name) {
+                $('#deleteItemModalTitle').find("span").text(name);
+                $("#deleteItemId").val(id);
+                $('#deleteItemModal').modal('show');
         },
     }
     
@@ -168,6 +178,40 @@
                 });
             })
             .fail(function(jqXHR, textStatus, errorThrown) {
+                new PNotify({
+                    title: "Opss",
+                    text: jqXHR.responseJSON.error.message,
+                    type: 'error',
+                    hide: true,
+                    styling: 'bootstrap3'
+                });
+            });
+        });
+        
+        $("#deleteItemForm").submit(function(e){
+            e.preventDefault();    
+            
+            var id = $("#deleteItemId").val();
+            
+            $.get(
+                url + '/dashboard/item/delete/' + id
+            )
+            .done(function(data) {
+                $('#deleteItemModal').modal('hide');
+                
+                new PNotify({
+                    title: "Sucesso",
+                    text: "Produto <strong>" + data.item.name + "</strong> removido.",
+                    type: 'success',
+                    hide: true,
+                    styling: 'bootstrap3'
+                });
+                
+                loadItems(Spider.Catalog.selectedCategory.attr("data-id"));
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                $('#deleteItemModal').modal('hide');
+                
                 new PNotify({
                     title: "Opss",
                     text: jqXHR.responseJSON.error.message,

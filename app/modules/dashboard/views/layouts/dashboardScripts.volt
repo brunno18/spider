@@ -23,5 +23,3 @@
 <script>
     var url = "{{publicUrl}}";
 </script>
-
-{{ javascript_include('js/spider.js') }}

@@ -247,66 +247,20 @@ class ItemController extends ControllerBase
             $this->db->begin();
             
             if ($item->delete()) {
-                
-                $image = $item->images->getFirst();
-                if ($image) {
-                    if ($image->delete()) {
-                        $path = $this->config->image->imagesDir . $image->name;
-                        if (file_exists($path)) {
-                            unlink($path);   
-                        }
-                        
-                        $this->db->commit();
-                        
-                        $response->setStatusCode(200, "Ok");
-                        $response->setJsonContent(
-                            array(
-                                "item" => [
-                                    "id" => $item->idItem,
-                                    "name" => $item->name,
-                                    "price" => $item->price,
-                                    "amount" => $item->amount,
-                                    "description" => $item->description,
-                                ]
-                            )
-                        );
-                    }
-                    else {
-                        $this->db->rollback();
-                        
-                        $messages = array();
-                        foreach ($item->getMessages() as $message) {
-                            array_push($messages, $message->getMessage());
-                        }
-                        
-                        $response->setStatusCode(400, "Bad Request");
-                        $response->setJsonContent(
-                            array(
-                                "error" => array(
-                                    "code"   => 400,
-                                    "message" => $messages,
-                                    "title" => "Bad Request"
-                                )
-                            )
-                        );
-                    }
-                }
-                else {
-                    $this->db->commit();
-                    
-                    $response->setStatusCode(200, "Ok");
-                    $response->setJsonContent(
-                        array(
-                            "item" => [
-                                "id" => $item->idItem,
-                                "name" => $item->name,
-                                "price" => $item->price,
-                                "amount" => $item->amount,
-                                "description" => $item->description,
-                            ]
-                        )
-                    );
-                }
+                $this->db->commit();
+
+                $response->setStatusCode(200, "Ok");
+                $response->setJsonContent(
+                    array(
+                        "item" => [
+                            "id" => $item->idItem,
+                            "name" => $item->name,
+                            "price" => $item->price,
+                            "amount" => $item->amount,
+                            "description" => $item->description,
+                        ]
+                    )
+                );
             }
             else {
                 $this->db->rollback();
