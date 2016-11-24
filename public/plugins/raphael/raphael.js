@@ -5141,14 +5141,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Raphael.registerFont
 	     [ method ]
 	     **
-	     * Adds given font to the registered set of fonts for Raphaël. Should be used as an internal call from within Cufón’s font file.
+	     * Adds given fonts to the registered set of fonts for Raphaël. Should be used as an internal call from within Cufón’s fonts file.
 	     * Returns original parameter, so it could be used with chaining.
-	     # <a href="http://wiki.github.com/sorccu/cufon/about">More about Cufón and how to convert your font form TTF, OTF, etc to JavaScript file.</a>
+	     # <a href="http://wiki.github.com/sorccu/cufon/about">More about Cufón and how to convert your fonts form TTF, OTF, etc to JavaScript file.</a>
 	     **
 	     > Parameters
 	     **
-	     - font (object) the font to register
-	     = (object) the font you passed in
+	     - fonts (object) the fonts to register
+	     = (object) the fonts you passed in
 	     > Usage
 	     | Cufon.registerFont(Raphael.registerFont({…}));
 	    \*/
@@ -5195,15 +5195,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Paper.getFont
 	     [ method ]
 	     **
-	     * Finds font object in the registered fonts by given parameters. You could specify only one word from the font name, like “Myriad” for “Myriad Pro”.
+	     * Finds fonts object in the registered fonts by given parameters. You could specify only one word from the fonts name, like “Myriad” for “Myriad Pro”.
 	     **
 	     > Parameters
 	     **
-	     - family (string) font family name or any word from it
-	     - weight (string) #optional font weight
-	     - style (string) #optional font style
-	     - stretch (string) #optional font stretch
-	     = (object) the font object
+	     - family (string) fonts family name or any word from it
+	     - weight (string) #optional fonts weight
+	     - style (string) #optional fonts style
+	     - stretch (string) #optional fonts stretch
+	     = (object) the fonts object
 	     > Usage
 	     | paper.print(100, 100, "Test string", paper.getFont("Times", 800), 30);
 	    \*/
@@ -5228,7 +5228,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        if (font) {
 	            for (var i = 0, ii = font.length; i < ii; i++) {
 	                thefont = font[i];
-	                if (thefont.face["font-weight"] == weight && (thefont.face["font-style"] == style || !thefont.face["font-style"]) && thefont.face["font-stretch"] == stretch) {
+	                if (thefont.face["font-weight"] == weight && (thefont.face["font-style"] == style || !thefont.face["font-style"]) && thefont.face["fonts-stretch"] == stretch) {
 	                    break;
 	                }
 	            }
@@ -5239,7 +5239,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * Paper.print
 	     [ method ]
 	     **
-	     * Creates path that represent given text written using given font at given position with given size.
+	     * Creates path that represent given text written using given fonts at given position with given size.
 	     * Result of the method is path element that contains whole text as a separate path.
 	     **
 	     > Parameters
@@ -5247,8 +5247,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     - x (number) x position of the text
 	     - y (number) y position of the text
 	     - string (string) text to print
-	     - font (object) font object, see @Paper.getFont
-	     - size (number) #optional size of the font, default is `16`
+	     - fonts (object) fonts object, see @Paper.getFont
+	     - size (number) #optional size of the fonts, default is `16`
 	     - origin (string) #optional could be `"baseline"` or `"middle"`, default is `"middle"`
 	     - letter_spacing (number) #optional number in range `-1..1`, default is `0`
 	     - line_spacing (number) #optional number in range `1..3`, default is `1`
@@ -6851,10 +6851,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	     o cy (number) the y-axis coordinate of the center of the circle, or ellipse
 	     o fill (string) colour, gradient or image
 	     o fill-opacity (number)
-	     o font (string)
-	     o font-family (string)
-	     o font-size (number) font size in pixels
-	     o font-weight (string)
+	     o fonts (string)
+	     o fonts-family (string)
+	     o fonts-size (number) fonts size in pixels
+	     o fonts-weight (string)
 	     o height (number)
 	     o href (string) URL, if specified element behaves as hyperlink
 	     o opacity (number)

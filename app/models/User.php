@@ -1,5 +1,7 @@
 <?php
 
+namespace Spider\Models;
+
 use Phalcon\Mvc\Model\Validator\Email as Email;
 
 class User extends \Phalcon\Mvc\Model
@@ -31,7 +33,7 @@ class User extends \Phalcon\Mvc\Model
     /**
      *
      * @var string
-     * @Column(type="string", length=100, nullable=false)
+     * @Column(type="string", length=100, nullable=true)
      */
     public $username;
 
@@ -52,14 +54,14 @@ class User extends \Phalcon\Mvc\Model
     /**
      *
      * @var string
-     * @Column(type="string", length=25, nullable=false)
+     * @Column(type="string", length=25, nullable=true)
      */
     public $phone;
 
     /**
      *
      * @var string
-     * @Column(type="string", length=25, nullable=false)
+     * @Column(type="string", length=25, nullable=true)
      */
     public $cellphone;
 
@@ -71,26 +73,35 @@ class User extends \Phalcon\Mvc\Model
     public $active;
 
     /**
+     *
+     * @var string
+     * @Column(type="string", length=45, nullable=false)
+     */
+    public $cpf_cnpj;
+
+    /**
+     *
+     * @var string
+     * @Column(type="string", nullable=false)
+     */
+    public $data_criacao;
+
+    /**
      * Validations and business logic
      *
      * @return boolean
      */
     public function validation()
     {
-        $this->validate(
-            new Email(
-                [
-                    'field'    => 'email',
-                    'required' => true,
-                ]
-            )
-        );
-
-        if ($this->validationHasFailed() == true) {
-            return false;
-        }
-
         return true;
+    }
+
+    /**
+     * Initialize method for model.
+     */
+    public function initialize()
+    {
+        $this->setSource("User");
     }
 
     /**
@@ -100,7 +111,7 @@ class User extends \Phalcon\Mvc\Model
      */
     public function getSource()
     {
-        return 'user';
+        return 'User';
     }
 
     /**

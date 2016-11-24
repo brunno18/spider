@@ -24,7 +24,7 @@
                 <div id="mover">
                     <div id="slide-1" class="slide">
                         <div class="slider-img">
-                            <a href="preview.html"><img src="images/slide-1-image.png" alt="learn more" /></a>
+                            <a href="preview.html"><img src="{{ baseurl }}images/slide-1-image.png" alt="learn more" /></a>
                         </div>
                         <div class="slider-text">
                             <h1>Clearance<br><span>SALE</span></h1>
@@ -46,13 +46,13 @@
                             <a href="preview.html" class="button">Comprar</a>
                         </div>
                         <div class="slider-img">
-                            <a href="preview.html"><img src="images/slide-3-image.jpg" alt="learn more" /></a>
+                            <a href="preview.html"><img src="{{ baseurl }}images/slide-3-image.jpg" alt="learn more" /></a>
                         </div>
                         <div class="clear"></div>
                     </div>
                     <div class="slide">
                         <div class="slider-img">
-                            <a href="preview.html"><img src="images/slide-2-image.jpg" alt="learn more" /></a>
+                            <a href="preview.html"><img src="{{ baseurl }}images/slide-2-image.jpg" alt="learn more" /></a>
                         </div>
                         <div class="slider-text">
                             <h1>Clearance<br><span>SALE</span></h1>

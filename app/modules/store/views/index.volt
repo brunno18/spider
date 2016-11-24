@@ -5,7 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="{{baseurl}}css/style.css" rel="stylesheet" type="text/css" media="all"/>
         <link href="{{baseurl}}css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-        {#<link href="css/cadastro.css" rel="stylesheet" type="text/css" media="all"/>#}
+        <link href="{{baseurl}}css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css" media="all"/>
         <script type="text/javascript" src="{{baseurl}}js/jquery-1.7.2.min.js"></script>
         <script type="text/javascript" src="{{baseurl}}js/move-top.js"></script>
         <script type="text/javascript" src="{{baseurl}}js/easing.js"></script>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="header_top">
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                        <a href="index.html"><img src="{{baseurl}}images/logo_spider2.png" alt="" /></a>
                     </div>
                     <div class="cart">
                         <p>Bem vindo a nossa loja online! <span>Carrinho:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
@@ -85,9 +85,31 @@
                     </div>
                     <div class="clear"></div>
                 </div>
+                {% if sucesso is defined %}
+                    <div id="signupalert" class="alert alert-danger">
+                        <strong>Erro!</strong>
+                        <span>{{mensagem}}</span>
+                    </div>
+                {% endif %}
+
+                {% if erro is defined %}
+                    <div id="signupalert" class="alert alert-warning">
+                        <strong>Aviso!</strong>
+                        <span>{{mensagem}}</span>
+                    </div>
+                {% endif %}
+
+                {% if aviso is defined %}
+                    <div id="signupalert" class="alert alert-warning">
+                        <strong>Aviso!</strong>
+                        <span>{{mensagem}}</span>
+                    </div>
+                {% endif %}
                 {{ content() }}
             </div>
-            {{ partial('index/main') }}
+            {% if dispatcher.getControllerName() === 'index' and dispatcher.getActionName() === 'index' %}
+                {{ partial('index/main') }}
+            {% endif %}
             <div class="footer">
                 <div class="wrap">
                     <div class="section group">
@@ -130,11 +152,11 @@
                             <div class="social-icons">
                                 <h4>Siga-nos</h4>
                                 <ul>
-                                    <li><a href="#" target="_blank"><img src="images/facebook.png" alt="" /></a></li>
-                                    <li><a href="#" target="_blank"><img src="images/twitter.png" alt="" /></a></li>
-                                    <li><a href="#" target="_blank"><img src="images/skype.png" alt="" /> </a></li>
-                                    <li><a href="#" target="_blank"> <img src="images/dribbble.png" alt="" /></a></li>
-                                    <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt="" /></a></li>
+                                    <li><a href="#" target="_blank"><img src="{{ baseurl }}images/facebook.png" alt="" /></a></li>
+                                    <li><a href="#" target="_blank"><img src="{{ baseurl }}images/twitter.png" alt="" /></a></li>
+                                    <li><a href="#" target="_blank"><img src="{{ baseurl }}images/skype.png" alt="" /> </a></li>
+                                    <li><a href="#" target="_blank"> <img src="{{ baseurl }}images/dribbble.png" alt="" /></a></li>
+                                    <li><a href="#" target="_blank"> <img src="{{ baseurl }}images/linkedin.png" alt="" /></a></li>
                                     <div class="clear"></div>
                                 </ul>
                             </div>

@@ -9,6 +9,7 @@
 
 use Spider\Modules\Store\Forms\CadastroForm;
 use Spider\Modules\Store\Library\ValidaCPFCNPJ;
+use Spider\Models\User;
 
 class CadastroController extends ControllerBase
 {
@@ -21,11 +22,11 @@ class CadastroController extends ControllerBase
         if ($this->request->isPost()) {
             //Usa um token para verificar se o post não foi de um site externo
             if ($this->security->checkToken()) {
-                $usuario = new \Spider\Models\User();
+                $usuario = new User();
 
                 $usuario->name = $this->request->getPost('nome', 'string');
                 $usuario->email = $this->request->getPost('email', 'email');
-                $usuario->senha = $this->request->getPost('senha', 'string');
+                $usuario->password = $this->request->getPost('senha', 'string');
                 $usuario->csenha = $this->request->getPost('csenha', 'string');
                 $usuario->cpf_cnpj = $this->request->getPost('cpf_cnpj', 'string');
                 $usuario->data_criacao = date('Y-m-d');
@@ -37,7 +38,7 @@ class CadastroController extends ControllerBase
                 //Dados corretos?
                 if ($go === true) {
                     //Faz o hash da senha usando hash do phalcon(BCRYPT)
-                    $usuario->senha = $this->security->hash($usuario->senha);
+                    $usuario->password = $this->security->hash($usuario->password);
                     if ($usuario->save()) {
                         $this->view->sucesso = true;
                         $this->view->mensagem = 'Cadastrado!Você pode se logar agora!';
@@ -73,15 +74,15 @@ class CadastroController extends ControllerBase
 
     private function checarDadosUsuario($usuario){
 
-        if((!isset($usuario->nome) || trim($usuario->nome)==='') ||
+        if((!isset($usuario->name) || trim($usuario->name)==='') ||
             (!isset($usuario->email) || trim($usuario->email)==='') ||
-            (!isset($usuario->senha) || trim($usuario->senha)==='') ||
+            (!isset($usuario->password) || trim($usuario->password)==='') ||
             (!isset($usuario->csenha) || trim($usuario->csenha)==='') ||
             (!isset($usuario->cpf_cnpj) || trim($usuario->cpf_cnpj)==='')){
             return array('mensagem' => 'Preencha todos os dados!');
         }
 
-        if(strlen($usuario->nome) > 50){
+        if(strlen($usuario->name) > 50){
             return array('mensagem' => 'Seu nome deve ter no máximo 50 caracteres.');
         }
 
@@ -89,11 +90,11 @@ class CadastroController extends ControllerBase
             return array('mensagem' => 'Seu email deve ter no máximo 180 caracteres.');
         }
 
-        if(strlen($usuario->senha) < 6 || strlen($usuario->senha) > 50){
+        if(strlen($usuario->password) < 6 || strlen($usuario->password) > 50){
             return array('mensagem' => 'Sua senha deve ter de 6 a 50 caracteres.');
         }
 
-        if(strcmp($usuario->senha, $usuario->csenha) != 0){
+        if(strcmp($usuario->password, $usuario->csenha) != 0){
             return array('mensagem' => 'As senhas digitadas não são iguais.');
         }
 

@@ -24,7 +24,7 @@
         {{ stylesheet_link('plugins/morrisjs/morris.css') }}
         
         <!-- Custom Fonts -->
-        {{ stylesheet_link('plugins/font-awesome/css/font-awesome.min.css') }}
+        {{ stylesheet_link('plugins/fonts-awesome/css/fonts-awesome.min.css') }}
         
          <!-- DataTables CSS -->
         {{ stylesheet_link('plugins/datatables-plugins/dataTables.bootstrap.css') }}
