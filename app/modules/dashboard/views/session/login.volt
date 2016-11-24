@@ -18,7 +18,7 @@
     {{ stylesheet_link('css/sb-admin-2.min.css') }}
     
 	<!-- Custom Fonts -->
-    {{ stylesheet_link('plugins/font-awesome/css/font-awesome.min.css') }}
+    {{ stylesheet_link('plugins/fonts-awesome/css/fonts-awesome.min.css') }}
 
 </head>
 

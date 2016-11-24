@@ -7,7 +7,7 @@ $config = new Config(array(
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
-        'password'    => '',
+        'password'    => 'admin',
         'dbname'      => 'spider',
         'charset'     => 'utf8',
     ),

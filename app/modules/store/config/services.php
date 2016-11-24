@@ -2,6 +2,8 @@
 
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
+use Phalcon\Security;
+use Phalcon\Session\Adapter\Files as SessionAdapter;
 
 
 $di->set('moduleConfig', function () use ($moduleConfig) {
@@ -36,4 +38,26 @@ $di->set('view', function () use ($moduleConfig) {
     ));
     
     return $view;
+});
+
+$di->set('security', function () {
+
+    $security = new Security();
+
+    // Hash das senhas cadastradas(Mudar conforme a capacidade do servidor)
+    $security->setWorkFactor(12);
+
+    return $security;
+}, true);
+
+/**
+ * Start the session the first time some component request the session service
+ */
+$di->setShared('session', function () {
+    $session = new SessionAdapter();
+    if (!$session->isStarted()) {
+        $session->start();
+    }
+
+    return $session;
 });
