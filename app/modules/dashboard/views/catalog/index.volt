@@ -18,9 +18,52 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body" id="categories">
-                        <button class="break-text btn btn-sq btn-default esse" id="newCategory" data-toggle="modal" data-target="#createCategoryModal">
+                        <button class="break-text btn btn-sq btn-default category-name-wrapper" id="newCategory" data-toggle="modal" data-target="#createCategoryModal">
                             <i class="middle-text fa fa-plus fa-4x"></i><br/>
                         </button>
+                        
+                        <div class="category-wrapper">
+                            <button class="break-text btn btn-sq btn-default category-name-wrapper" data-id="9" data-name="Saladas   ">
+                                <h5 class="middle-text"><strong>Saladas de Frutas Vermelhas</strong></h5>
+                            </button>
+                            <div class="hover-btn text-center">
+                                <button type="button" class="btn btn-primary btn-circle" data-dismiss="alert">
+                                    <i class="fa fa-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-circle" data-dismiss="alert">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-wrapper">
+                            <button class="break-text btn btn-sq btn-default category-name-wrapper" data-id="9" data-name="Massas">
+                                <h5 class="middle-text"><strong>Massas</strong></h5>
+                            </button>
+                            <div class="hover-btn text-center">
+                                <button type="button" class="btn btn-primary btn-circle" data-dismiss="alert">
+                                    <i class="fa fa-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-circle" data-dismiss="alert">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="category-wrapper">
+                            <button class="break-text btn btn-sq btn-default category-name-wrapper" data-id="9" data-name="Bebidas">
+                                <h5 class="middle-text"><strong>Bebidas</strong></h5>
+                            </button>
+                            <div class="hover-btn text-center">
+                                <button type="button" class="btn btn-primary btn-circle" data-dismiss="alert">
+                                    <i class="fa fa-pencil"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-circle" data-dismiss="alert">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
                     </div>
                     <!-- /.panel-body -->
                 </div>
@@ -99,6 +142,80 @@
                             <button type="submit" class="btn btn-primary">Cadastrar</button>
                         </div>
                         </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    <!-- Edit category modal form -->
+    <div class="modal fade" id="editCategoryModal" tabindex="-1" role="dialog" aria-labelledby="editCategoryModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="editCategoryModalTitle">Editar Categoria - <span> </span></h4>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" id="editCategoryForm">
+                        <div class="box-body">
+                            <input type="hidden" id="editCategoryId" name="id">
+
+                            <div class="form-group">
+                                <label for="editCategoryName">Nome da Categoria</label>
+                                <input type="text" class="form-control" id="editCategoryName" name="name" placeholder="Informe o nome da categoria" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editCategoryDescription">Descrição</label>
+                                <textarea class="form-control" rows="3" id="editCategoryDescription" name="description" placeholder="Fale um pouco sobre a categoria..."></textarea>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    
+    <!-- Delete category modal form -->
+    <div class="modal fade" id="deleteCategoryModal" tabindex="-1" role="dialog" aria-labelledby="deleteCategoryModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title" id="deleteCategoryModalTitle">Remover Categoria - <span> </span></h4>
+                </div>
+
+                <div class="modal-body">
+                    <div class="box-body">
+                        <p>Tem certeza que deseja remover essa categoria?</p>
+                    </div>
+                    <!-- /.box-body -->
+
+                    <form role="form" id="deleteCategoryForm">
+                        <input type="hidden" id="deleteCategoryId" name="id">
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Remover</button>
+                        </div>
+                    </form>
                 </div>
             </div>
             <!-- /.modal-content -->
@@ -250,6 +367,22 @@
         <button class="btn btn-danger btn-circle delete-item" data-container="body" data-toggle="tooltip" data-html="true" data-placement="top" title="Remover">
             <i class="fa fa-trash"></i>
         </button>
+    </div>
+    
+    <div class="hidden" id="categoryTemplate">
+        <div class="category-wrapper">
+            <button class="break-text btn btn-sq btn-default category-name-wrapper">
+                <h5 class="middle-text"><strong class="category-name"></strong></h5>
+            </button>
+            <div class="hover-btn text-center">
+                <button type="button" class="btn btn-primary btn-circle edit-category" data-dismiss="alert">
+                    <i class="fa fa-pencil"></i>
+                </button>
+                <button type="button" class="btn btn-danger btn-circle delete-category" data-dismiss="alert">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
 

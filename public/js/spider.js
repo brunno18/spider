@@ -52,7 +52,7 @@
             success :   function( data ) {
                             var categories = data.categories;
                                 categories.forEach(function(category, index) {
-                                var category = '    <button class="break-text btn btn-sq btn-default esse" ' + 'id="category-' + category.id + 
+                                var category = '    <button class="break-text btn btn-sq btn-default category-name-wrapper" ' + 'id="category-' + category.id + 
                                                 '" data-id=' + category.id + ' data-name=' + category.name + '>' +
                                                 '<h5 class="middle-text"><strong>' + category.name + "<strong>" +
                                                 '</button>';
