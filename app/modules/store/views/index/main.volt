@@ -11,7 +11,7 @@
         </div>
         <div class="section group">
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="preview.html"><img src="images/feature-pic1.jpg" alt="" /></a>
+                <a href="preview.html"><img src="{{ baseurl }}images/feature-pic1.jpg" alt="" /></a>
                 <h2>Lorem Ipsum is simply </h2>
                 <div class="price-details">
                     <div class="price-number">
@@ -25,7 +25,7 @@
 
             </div>
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="preview.html"><img src="images/feature-pic2.jpg" alt="" /></a>
+                <a href="preview.html"><img src="{{ baseurl }}images/feature-pic2.jpg" alt="" /></a>
                 <h2>Lorem Ipsum is simply </h2>
                 <div class="price-details">
                     <div class="price-number">
@@ -39,7 +39,7 @@
 
             </div>
             <div class="grid_1_of_4 images_1_of_4">
-                <a href="preview.html"><img src="images/feature-pic3.jpg" alt="" /></a>
+                <a href="preview.html"><img src="{{ baseurl }}images/feature-pic3.jpg" alt="" /></a>
                 <h2>Lorem Ipsum is simply </h2>
                 <div class="price-details">
                     <div class="price-number">

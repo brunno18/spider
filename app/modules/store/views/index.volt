@@ -21,16 +21,21 @@
                     </div>
                     <div class="account_desc">
                         <ul>
-                            <li><a href="{{ baseurl }}store/cadastro">Registrar</a></li>
-                            <li><a href="#">Login</a></li>
-                            <li><a href="#">Minha conta</a></li>
+                            {% if session.get('id') != null %}
+                                <span class="text-log">Bem vindo, {{ session.get('nome') }} </span>
+                                <li><a href="#">Minha conta</a></li>
+                                <li><a href="{{ baseurl }}session/end" id="customer_logout_link">Logout</a></li>
+                            {% else %}
+                                <li><a href="{{ baseurl }}store/cadastro">Registrar</a></li>
+                                <li><a href="{{ baseurl }}store/session">Login</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                     <div class="clear"></div>
                 </div>
                 <div class="header_top">
                     <div class="logo">
-                        <a href="index.html"><img src="{{baseurl}}images/logo_spider2.png" alt="" /></a>
+                        <a href="{{ baseurl }}store/"><img src="{{baseurl}}images/logo_spider2.png" alt="" /></a>
                     </div>
                     <div class="cart">
                         <p>Bem vindo a nossa loja online! <span>Carrinho:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
@@ -86,15 +91,15 @@
                     <div class="clear"></div>
                 </div>
                 {% if sucesso is defined %}
-                    <div id="signupalert" class="alert alert-danger">
-                        <strong>Erro!</strong>
+                    <div id="signupalert" class="alert alert-success">
+                        <strong>Sucesso!</strong>
                         <span>{{mensagem}}</span>
                     </div>
                 {% endif %}
 
                 {% if erro is defined %}
-                    <div id="signupalert" class="alert alert-warning">
-                        <strong>Aviso!</strong>
+                    <div id="signupalert" class="alert alert-danger">
+                        <strong>Erro!</strong>
                         <span>{{mensagem}}</span>
                     </div>
                 {% endif %}
