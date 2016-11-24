@@ -14,8 +14,8 @@ $config = new Config(array(
     'application' => array(
         'modelsDir'      => 'app/models/',
         'migrationsDir'  => 'app/migrations/',
-        'baseUri'        => '/spider/',
-        'publicUrl'      => '/spider'
+        'baseUri'        => '',
+        'publicUrl'      => ''
     )
 ));
 

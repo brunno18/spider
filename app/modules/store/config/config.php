@@ -7,6 +7,6 @@ return new \Phalcon\Config(array(
         'cacheDir'       => __DIR__ . '/../cache/',
         'formsDir'       => __DIR__ . '/../forms/',
         'libraryDir'     => __DIR__ . '/../library/',
-        'baseUri'        => '/store',
+        'baseUri'        => '',
     )
 ));
