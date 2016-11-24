@@ -24,7 +24,7 @@
         {{ stylesheet_link('plugins/morrisjs/morris.css') }}
         
         <!-- Custom Fonts -->
-        {{ stylesheet_link('plugins/fonts-awesome/css/fonts-awesome.min.css') }}
+        {{ stylesheet_link('plugins/font-awesome/css/font-awesome.min.css') }}
         
          <!-- DataTables CSS -->
         {{ stylesheet_link('plugins/datatables-plugins/dataTables.bootstrap.css') }}
@@ -288,19 +288,19 @@
                             </li>
                             
                             <li>
-                                <a href="{{publicUrl}}/dashboard/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                                <a href="{{publicUrl}}dashboard/index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                             </li>
                             
                             <li>
-                                <a href="{{publicUrl}}/dashboard/order/index"><i class="fa fa-shopping-cart fa-fw"></i> Pedidos</a>
+                                <a href="{{publicUrl}}dashboard/order/index"><i class="fa fa-shopping-cart fa-fw"></i> Pedidos</a>
                             </li>
                             
                             <li>
-                                <a href="{{publicUrl}}/dashboard/client/index"><i class="fa fa-users fa-fw"></i> Clientes</a>
+                                <a href="{{publicUrl}}dashboard/client/index"><i class="fa fa-users fa-fw"></i> Clientes</a>
                             </li>
                             
                             <li>
-                                <a href="{{publicUrl}}/dashboard/catalog"><i class="fa fa-bars fa-fw"></i> Catálogo</a>
+                                <a href="{{publicUrl}}dashboard/catalog"><i class="fa fa-bars fa-fw"></i> Catálogo</a>
                             </li>
                             
                         </ul>
