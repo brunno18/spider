@@ -3,6 +3,7 @@
 use Phalcon\Mvc\View;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Security;
+use Phalcon\Session\Adapter\Files as SessionAdapter;
 
 
 $di->set('moduleConfig', function () use ($moduleConfig) {
