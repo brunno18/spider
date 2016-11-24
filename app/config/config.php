@@ -2,6 +2,12 @@
 
 use Phalcon\Config;
 
+$heroku_url = getenv("HEROKU_URL");
+
+if (empty($heroku_url)) {
+    $heroku_url = "http://localhost/spider/";
+}
+
 $config = new Config(array(
     'database' => array(
         'adapter'     => 'Mysql',
@@ -14,10 +20,9 @@ $config = new Config(array(
     'application' => array(
         'modelsDir'      => 'app/models/',
         'migrationsDir'  => 'app/migrations/',
-        'baseUri'        => '',
-        'publicUrl'      => ''
+        'baseUri'        => $heroku_url,
+        'publicUrl'      => $heroku_url
     )
 ));
-
 
 return $config;
