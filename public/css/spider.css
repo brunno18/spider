@@ -31,7 +31,26 @@
     display: inline-block;
 }
 
-.esse {
+.category-name-wrapper {
     margin-right: 5px;
     margin-top: 5px;
+}
+
+.category-wrapper {
+    vertical-align: top; 
+    display: inline-block; 
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.hover-btn {
+    position: absolute;
+    display: none;
+    bottom: -8px;
+    left: 18px;
+    overflow:hidden;
+}
+
+.category-wrapper:hover .hover-btn {
+    display: block;
 }
