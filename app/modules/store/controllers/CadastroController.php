@@ -30,7 +30,7 @@ class CadastroController extends ControllerBase
                 $usuario->csenha = $this->request->getPost('csenha', 'string');
                 $usuario->cpf_cnpj = $this->request->getPost('cpf_cnpj', 'string');
                 $usuario->data_criacao = date('Y-m-d');
-                $usuario->idRole = 5;
+                $usuario->role_id = 5;
                 $usuario->active = 1;
 
                 $go = $this->checarDadosUsuario($usuario);

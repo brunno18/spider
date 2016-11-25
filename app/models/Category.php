@@ -12,7 +12,7 @@ class Category extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    public $idCategory;
+    public $id;
 
     /**
      *
@@ -31,7 +31,7 @@ class Category extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {   
-        $this->hasMany("idCategory",  __NAMESPACE__ . "\Item", "idCategory", [
+        $this->hasMany("id",  __NAMESPACE__ . "\Item", "category_id", [
             'alias' => 'items',
             "foreignKey" => [
                 "message" => "Essa categoria não pode ser removida por que há produtos nela.",

@@ -21,7 +21,7 @@ class User extends \Phalcon\Mvc\Model
      * @var integer
      * @Column(type="integer", length=11, nullable=false)
      */
-    public $idRole;
+    public $role_id;
 
     /**
      *

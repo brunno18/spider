@@ -20,10 +20,10 @@ class CategoryForm extends Form
     {
 
         if (!isset($options['edit'])) {
-            $element = new Text("idCategory");
-            $this->add($element->setLabel("idCategory"));
+            $element = new Text("id");
+            $this->add($element->setLabel("id"));
         } else {
-            $this->add(new Hidden("idCategory"));
+            $this->add(new Hidden("id"));
         }
 
         $name = new Text("name");

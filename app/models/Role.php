@@ -28,7 +28,7 @@ class Role extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->hasMany("id",  __NAMESPACE__ . "\Permission", "idRole", [
+        $this->hasMany("id",  __NAMESPACE__ . "\Permission", "role_id", [
             'alias' => 'permissions'
         ]);
     }

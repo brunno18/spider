@@ -105,7 +105,7 @@ class SessionController extends ControllerBase
         $this->session->set('id', $usuario->id);
         $this->session->set('nome', $usuario->name);
         $this->session->set('email', $usuario->email);
-        $this->session->set('papel', $usuario->idRole);
+        $this->session->set('papel', $usuario->role_id);
         //$grupo = Grupo::findFirst('nome = "'.$usuario->grupo.'"');
         //$this->session->set('papelGrupo', $grupo->papel);
     }

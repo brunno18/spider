@@ -15,7 +15,7 @@ class Permission extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    public $idRole;
+    public $role_id;
 
     /**
      *
@@ -37,7 +37,7 @@ class Permission extends \Phalcon\Mvc\Model
 
         public function initialize()
     {
-        $this->belongsTo("idRole",  __NAMESPACE__ . "\Role", "id", [
+        $this->belongsTo("role_id",  __NAMESPACE__ . "\Role", "id", [
             'alias' => 'role'
         ]);
     }

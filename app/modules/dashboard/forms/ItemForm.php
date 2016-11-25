@@ -20,10 +20,10 @@ class ItemForm extends Form
     {
 
         if (!isset($options['edit'])) {
-            $element = new Text("idCategory");
-            $this->add($element->setLabel("idCategory"));
+            $element = new Text("category_id");
+            $this->add($element->setLabel("category_id"));
         } else {
-            $this->add(new Hidden("idCategory"));
+            $this->add(new Hidden("category_id"));
         }
 
         $name = new Text("name");

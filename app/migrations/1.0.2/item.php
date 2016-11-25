@@ -25,12 +25,12 @@ class ItemMigration_102 extends Migration
                     )
                 ),
                 new Column(
-                    'idCategory',
+                    'category_id',
                     array(
                         'type' => Column::TYPE_INTEGER,
                         'notNull' => true,
                         'size' => 11,
-                        'after' => 'idItem'
+                        'after' => 'id'
                     )
                 ),
                 new Column(
@@ -39,7 +39,7 @@ class ItemMigration_102 extends Migration
                         'type' => Column::TYPE_VARCHAR,
                         'notNull' => true,
                         'size' => 100,
-                        'after' => 'idCategory'
+                        'after' => 'category_id'
                     )
                 ),
                 new Column(
@@ -72,7 +72,7 @@ class ItemMigration_102 extends Migration
                 )
             ),
             'indexes' => array(
-                new Index('PRIMARY', array('idItem'))
+                new Index('PRIMARY', array('id'))
             ),
             'options' => array(
                 'TABLE_TYPE' => 'BASE TABLE',

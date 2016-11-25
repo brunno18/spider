@@ -182,7 +182,6 @@ class Acl extends Component
         }
 
         $filePath = $this->getFilePath();
-        error_log($filePath);
         if (touch($filePath) && is_writable($filePath)) {
 
             file_put_contents($filePath, serialize($acl));

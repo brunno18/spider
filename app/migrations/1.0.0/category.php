@@ -15,7 +15,7 @@ class CategoryMigration_100 extends Migration
             array(
             'columns' => array(
                 new Column(
-                    'idCategory',
+                    'id',
                     array(
                         'type' => Column::TYPE_INTEGER,
                         'notNull' => true,
@@ -30,7 +30,7 @@ class CategoryMigration_100 extends Migration
                         'type' => Column::TYPE_VARCHAR,
                         'notNull' => true,
                         'size' => 100,
-                        'after' => 'idCategory'
+                        'after' => 'id'
                     )
                 ),
                 new Column(
@@ -44,7 +44,7 @@ class CategoryMigration_100 extends Migration
                 )
             ),
             'indexes' => array(
-                new Index('PRIMARY', array('idCategory'))
+                new Index('PRIMARY', array('id'))
             ),
             'options' => array(
                 'TABLE_TYPE' => 'BASE TABLE',

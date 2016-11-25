@@ -12,13 +12,13 @@ class Item extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    public $idItem;
+    public $id;
 
     /**
      *
      * @var integer
      */
-    public $idCategory;
+    public $category_id;
 
     /**
      *
@@ -49,12 +49,8 @@ class Item extends \Phalcon\Mvc\Model
      */
     public function initialize()
     {
-        $this->belongsTo("idCategory",  __NAMESPACE__ . "\Category", "idCategory", [
+        $this->belongsTo("category_id",  __NAMESPACE__ . "\Category", "id", [
             'alias' => 'category'
-        ]);
-        
-        $this->hasMany("idItem",  __NAMESPACE__ . "\Media", "idItem", [
-            'alias' => 'images'
         ]);
     }
     
@@ -74,7 +70,7 @@ class Item extends \Phalcon\Mvc\Model
         
         $this->validate(
             new Uniqueness(array(
-                'field' => ['name', 'idCategory'],
+                'field' => ['name', 'category_id'],
                 'message' => 'Já existe um item com o nome - ' . $this->name
             ))
         );

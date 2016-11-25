@@ -34,7 +34,7 @@ class CategoryController extends ControllerBase
                 $response->setJsonContent(
                     array(
                         "category" => array(
-                            "id" => $category->idCategory,
+                            "id" => $category->id,
                             "name" => $category->name,
                             "description" => $category->description
                         )
@@ -93,7 +93,7 @@ class CategoryController extends ControllerBase
         $data = array();
         foreach($categories as $category) {
             array_push($data, array(
-                "id" => $category->idCategory,
+                "id" => $category->id,
                 "name" => $category->name,
                 "description" => $category->description
             ));
@@ -120,7 +120,7 @@ class CategoryController extends ControllerBase
             $response->setJsonContent(
                 array(
                     "category" => [
-                        "id" => $category->idCategory,
+                        "id" => $category->id,
                         "name" => $category->name,
                         "description" => $category->description,
                     ]
@@ -183,7 +183,7 @@ class CategoryController extends ControllerBase
                     $response->setJsonContent(
                         array(
                             "category" => array(
-                                "id" => $category->idCategory,
+                                "id" => $category->id,
                                 "name" => $category->name,
                                 "description" => $category->description
                             )
@@ -237,7 +237,7 @@ class CategoryController extends ControllerBase
                 $response->setJsonContent(
                     array(
                         "category" => array(
-                            "id" => $category->idCategory,
+                            "id" => $category->id,
                             "name" => $category->name,
                             "description" => $category->description
                         )

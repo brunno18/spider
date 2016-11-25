@@ -276,7 +276,7 @@
             )
             .done(function(data) {
                 var category = data.category;
-                
+                console.log(data);
                 $('#createCategoryModal').modal('hide');
                 
                 var categoryTemplate = $("#categoryTemplate").clone();

@@ -8,28 +8,36 @@ if (empty($heroku_url)) {
     $heroku_url = "http://localhost/spider/";
 }
 
-$dbopts = getenv('DATABASE_URL');
+//$dbopts = getenv('DATABASE_URL');
+//
+//if (empty($dbopts)) {
+//    $database = array(
+//        'adapter'     => 'Mysql',
+//        'host'        => 'localhost',
+//        'username'    => 'root',
+//        'password'    => '',
+//        'dbname'      => 'spider',
+//        'charset'     => 'utf8',
+//    );
+//}
+//else {
+//    $dbopts = parse_url($dbopts);
+//    $database = array(
+//        'host'        => $dbopts['host'],
+//        'port'        => $dbopts["port"],
+//        'username'    => $dbopts['user'],
+//        'password'    => $dbopts['pass'],
+//        'dbname'      => ltrim($dbopts["path"],'/')
+//    );
+//}
 
-if (empty($dbopts)) {
-    $database = array(
-        'adapter'     => 'Mysql',
+$database = array(
         'host'        => 'localhost',
-        'username'    => 'root',
-        'password'    => '',
+        'port'        => '5432',
+        'username'    => 'postgres',
+        'password'    => 'admin',
         'dbname'      => 'spider',
-        'charset'     => 'utf8',
     );
-}
-else {
-    $dbopts = parse_url($dbopts);
-    $database = array(
-        'host'        => $dbopts['host'],
-        'port'        => $dbopts["port"],
-        'username'    => $dbopts['user'],
-        'password'    => $dbopts['pass'],
-        'dbname'      => ltrim($dbopts["path"],'/')
-    );
-}
 
 $config = new Config(array(
     'database' => $database,

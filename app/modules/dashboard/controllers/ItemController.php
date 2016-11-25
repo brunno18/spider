@@ -16,13 +16,13 @@ class ItemController extends ControllerBase
         $this->view->section_title = "Catalogo";
     }
     
-    public function createAction($idCategory)
+    public function createAction($category_id)
     {   
         $response = new Response();
         $response->setHeader("Content-Type", "application/json");
         
-        if ($idCategory) {
-            $category = Category::findFirst($idCategory);
+        if ($category_id) {
+            $category = Category::findFirst($category_id);
             if ($category) {
                 $form = new ItemForm;
                 $item = new Item();
@@ -36,13 +36,13 @@ class ItemController extends ControllerBase
                         $response->setJsonContent(
                             array(
                                 "item" => array(
-                                    "id" => $item->idItem,
+                                    "id" => $item->id,
                                     "name" => $item->name,
                                     "description" => $item->description,
                                     "amount" => $item->amount,
                                     "price" => $item->price,
                                     "category" => array(
-                                        "id" => $item->category->idCategory,
+                                        "id" => $item->category->id,
                                         "name" => $item->category->name,
                                         "description" => $item->category->description
                                     )
@@ -128,7 +128,7 @@ class ItemController extends ControllerBase
             $response->setJsonContent(
                 array(
                     "item" => [
-                        "id" => $item->idItem,
+                        "id" => $item->id,
                         "name" => $item->name,
                         "price" => $item->price,
                         "amount" => $item->amount,
@@ -192,7 +192,7 @@ class ItemController extends ControllerBase
                     $response->setJsonContent(
                         array(
                             "item" => [
-                                "id" => $item->idItem,
+                                "id" => $item->id,
                                 "name" => $item->name,
                                 "price" => $item->price,
                                 "amount" => $item->amount,
@@ -253,7 +253,7 @@ class ItemController extends ControllerBase
                 $response->setJsonContent(
                     array(
                         "item" => [
-                            "id" => $item->idItem,
+                            "id" => $item->id,
                             "name" => $item->name,
                             "price" => $item->price,
                             "amount" => $item->amount,
@@ -285,15 +285,15 @@ class ItemController extends ControllerBase
         $response->send();
     }
     
-    public function searchAction($idCategory)
+    public function searchAction($category_id)
     {
         $this->view->disable();
         
-        $columns = array('idItem', 'name', 'amount', 'price');
+        $columns = array('id', 'name', 'amount', 'price');
         $query = Item::query();
         $query->columns($columns);
         
-        $whereCategory = "idCategory = $idCategory";
+        $whereCategory = "category_id = $category_id";
         $where = "";
         if ( isset($_GET['sSearch']) && $_GET['sSearch'] != "" )
         {
@@ -335,7 +335,7 @@ class ItemController extends ControllerBase
         $query->limit($limit[0], $limit[1]);
         $data = $query->execute();
         
-        $category = Category::findFirst("idCategory = $idCategory");
+        $category = Category::findFirst("id = $category_id");
         
         $iTotalRecords = $category->countItems();
         $iTotalDisplayRecords = $category->countItems(array("conditions" => $where));
@@ -351,7 +351,7 @@ class ItemController extends ControllerBase
         foreach ($data as $item) {
             $row = array();
             
-            $row['id'] = $item->idItem;
+            $row['id'] = $item->id;
             $row['name'] = $item->name;
             $row['amount'] = $item->amount;
             $row['price'] = $item->price;

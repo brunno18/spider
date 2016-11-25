@@ -25,7 +25,7 @@ class PermissionMigration_100 extends Migration
                     )
                 ),
                 new Column(
-                    'idRole',
+                    'role_id',
                     array(
                         'type' => Column::TYPE_INTEGER,
                         'notNull' => true,
@@ -39,7 +39,7 @@ class PermissionMigration_100 extends Migration
                         'type' => Column::TYPE_VARCHAR,
                         'notNull' => true,
                         'size' => 50,
-                        'after' => 'idRole'
+                        'after' => 'role_id'
                     )
                 ),
                 new Column(
