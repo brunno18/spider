@@ -182,7 +182,7 @@ class Acl extends Component
         }
 
         $filePath = $this->getFilePath();
-
+        error_log($filePath);
         if (touch($filePath) && is_writable($filePath)) {
 
             file_put_contents($filePath, serialize($acl));
@@ -209,7 +209,7 @@ class Acl extends Component
     protected function getFilePath()
     {
         if (!isset($this->filePath)) {
-            $this->filePath = $this->moduleConfig->application->cacheDir . '/acl/data.txt';
+            $this->filePath = $this->moduleConfig->application->cacheDir . 'acl/data.txt';
         }
 
         return $this->filePath;

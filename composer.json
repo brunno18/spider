@@ -12,8 +12,10 @@
 		"compile": [
 			"mkdir app/modules/dashboard/cache",
             "mkdir app/modules/store/cache",
+            "mkdir app/modules/store/cache/acl",
 			"chmod -R 777 app/modules/dashboard/cache",
-            "chmod -R 777 app/modules/store/cache"
+            "chmod -R 777 app/modules/store/cache",
+            "chmod -R 777 app/modules/store/cache/data"
 		]
 	}
 }
