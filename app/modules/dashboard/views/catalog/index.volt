@@ -22,6 +22,7 @@
                             <i class="middle-text fa fa-plus fa-4x"></i><br/>
                         </button>
                         
+<!--
                         <div class="category-wrapper">
                             <button class="break-text btn btn-sq btn-default category-name-wrapper" data-id="9" data-name="Saladas   ">
                                 <h5 class="middle-text"><strong>Saladas de Frutas Vermelhas</strong></h5>
@@ -35,7 +36,9 @@
                                 </button>
                             </div>
                         </div>
+-->
                         
+<!--
                         <div class="category-wrapper">
                             <button class="break-text btn btn-sq btn-default category-name-wrapper" data-id="9" data-name="Massas">
                                 <h5 class="middle-text"><strong>Massas</strong></h5>
@@ -49,7 +52,9 @@
                                 </button>
                             </div>
                         </div>
+-->
                         
+<!--
                         <div class="category-wrapper">
                             <button class="break-text btn btn-sq btn-default category-name-wrapper" data-id="9" data-name="Bebidas">
                                 <h5 class="middle-text"><strong>Bebidas</strong></h5>
@@ -63,6 +68,7 @@
                                 </button>
                             </div>
                         </div>
+-->
                         
                     </div>
                     <!-- /.panel-body -->
