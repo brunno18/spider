@@ -335,7 +335,7 @@ class ItemController extends ControllerBase
         $query->limit($limit[0], $limit[1]);
         $data = $query->execute();
         
-        $category = Category::findFirst($idCategory);
+        $category = Category::findFirst("idCategory = $idCategory");
         
         $iTotalRecords = $category->countItems();
         $iTotalDisplayRecords = $category->countItems(array("conditions" => $where));
