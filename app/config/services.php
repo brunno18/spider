@@ -39,7 +39,7 @@ $di->set('url', function () use ($config) {
  * Database connection is created based in the parameters defined in the configuration file
  */
 $di->set('db', function () use ($config) {
-    if ($config->database['adapter'] == 'Mysql') {
+    if (isset($config->database['adapter'])) {
         $connection = new Mysql($config->database->toArray());
     }
     else {
