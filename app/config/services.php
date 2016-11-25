@@ -7,7 +7,8 @@
 
 use Phalcon\Di\FactoryDefault;
 use Phalcon\Mvc\Url as UrlResolver;
-use Phalcon\Db\Adapter\Pdo\Mysql as DbAdapter;
+use Phalcon\Db\Adapter\Pdo\Mysql;
+use Phalcon\Db\Adapter\Pdo\Postgresql;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 
@@ -38,7 +39,14 @@ $di->set('url', function () use ($config) {
  * Database connection is created based in the parameters defined in the configuration file
  */
 $di->set('db', function () use ($config) {
-    return new DbAdapter($config->database->toArray());
+    if ($config->database['adapter'] == 'Mysql') {
+        $connection = new Mysql($config->database->toArray());
+    }
+    else {
+        $connection = new Postgresql($config->database->toArray());
+    }
+    
+    return $connection;
 });
 
 /**
